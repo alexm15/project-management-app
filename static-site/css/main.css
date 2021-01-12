@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.button, .login-button {
+  padding: .4rem 1rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 900;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+}
+
+.button--primary, .login-button--primary {
+  color: #fff;
+  background: #4f6cff;
+}
+
+.filter {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.globalState-isHidden {
+  display: none;
+}
+
+.page {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  height: 100vh;
+}
+
+.mainMenu {
+  width: 11rem;
+  background: #4f6cff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  padding: 1.2rem 1rem;
+}
+
+.mainMenu a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.mainMenu-nav {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.mainMenu-navItem {
+  padding: .5rem .75rem;
+  border-radius: 20px;
+  margin-bottom: 5rem;
+}
+
+.mainMenu-navItem-active {
+  background-color: #3657ff;
+}
+
+.mainMenu-settings {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.logo {
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.contentArea {
+  background: #ECECEC;
+}
+
+.topArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-greeting {
+  font-weight: 400;
+}
+
+.login-profilePicture {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 1rem;
+}
+
+.login-button {
+  margin-left: 1rem;
+}
+
+.clock {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.mainArea {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr .1fr 1.5fr;
+      grid-template-columns: 2fr .1fr 1.5fr;
+  padding: 0 2rem;
+}
+
+.mainArea-item:nth-child(1) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/span 1;
+}
+
+.mainArea-item:nth-child(2) {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/span 1;
+}
+
+.mainArea-itemHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.mainArea-itemHeader h1, .mainArea-itemHeader h2, .mainArea-itemHeader h3, .mainArea-itemHeader h4 {
+  font-weight: 900;
+}
+
+.mainArea-itemBody {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.03);
+}
+
+.projectList {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.projectList li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3] 0.1fr;
+      grid-template-columns: repeat(3, 1fr) 0.1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+.projectList span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.projectList-header {
+  padding: 0 1.5rem .5rem 1.5rem;
+}
+
+.projectList-item {
+  border-radius: 20px;
+  background: #4f6cff;
+  color: #fff;
+  margin-bottom: .7rem;
+  padding: 1rem 1.5rem;
+  font-weight: 900;
+  font-size: 1.2rem;
+  height: 3.5rem;
+  -webkit-transition: height .5s;
+  transition: height .5s;
+}
+
+.projectList-item:hover {
+  background: #3657ff;
+}
+
+.projectList-itemAddTask {
+  text-align: right;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.projectList-itemAddTaskIcon:hover {
+  color: #cccccc;
+}
+
+.projectList-item-expanded {
+  height: 20rem;
+}
+
+.projectList-itemExpanded {
+  grid-column: 1/-1;
+  margin-top: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  font-weight: 400;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.projectList-itemDescription {
+  font-size: .9rem;
+  line-height: 1.8rem;
+}
+
+.projectList-itemDescription h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.projectList-itemTaskName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projectList-itemTaskName label {
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  border: .2em solid #fff;
+  position: relative;
+}
+
+.projectList-itemTaskName label::before {
+  content: '';
+  width: 0.2em;
+  height: 0.4em;
+  border-right: 0.2em solid #F5A953;
+  border-bottom: 0.2em solid #F5A953;
+  -webkit-transform: translate(-50%, -50%) rotateZ(40deg);
+          transform: translate(-50%, -50%) rotateZ(40deg);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: #F5A953;
+  opacity: 0;
+}
+
+.projectList-itemTaskName input[type='checkbox'] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.projectList-itemTaskName input[type='checkbox']:checked + label {
+  background-color: #fff;
+}
+
+.projectList-itemTaskName input[type='checkbox']:checked + label::before {
+  opacity: 1;
+}
+
+.projectList-itemTaskList {
+  padding-right: .5rem;
+}
+
+.projectList-itemTaskList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.projectList-itemTaskListHeader span {
+  font-weight: 700;
+}
+
+.projectList-item--2 {
+  background: #F5A953;
+}
+
+.projectList-item--2:hover {
+  background: #f49d3b;
+}
