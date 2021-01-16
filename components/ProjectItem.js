@@ -10,8 +10,7 @@ class ProjectItem extends Component {
   }
 
   toggleExpand() {
-    const current = this.state.isExpanded;
-    this.setState({ isExpanded: !current });
+    this.setState(state => ({ isExpanded: !state.isExpanded }));
   }
 
   addTask() {
