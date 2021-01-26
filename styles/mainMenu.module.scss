@@ -1,0 +1,34 @@
+@import 'config';
+
+.menu {
+    width: 11rem;
+    background: $color-primary;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+    padding: 1.2rem 1rem;
+
+    a {
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .nav {
+        align-self: center;
+        &Item {
+            padding: .5rem .75rem;
+            border-radius: 20px;
+            margin-bottom: 5rem;
+        }
+        &ItemActive {
+            background-color: darken($color-primary, 5%);
+        }
+    }
+
+    .settings {
+        justify-self: end;
+        align-self: end;
+        color: #fff;
+        font-size: 3rem;
+    }
+}

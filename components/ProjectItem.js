@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import styles from '../styles/projectList.module.scss';
+import styles from '../styles/projectItem.module.scss';
 
 class ProjectItem extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class ProjectItem extends Component {
                 </span>
               </li>
               <li className="projectList-itemTask">
-                <span className="projectList-itemTaskName">
+                <span className={styles.itemTaskName}>
                   <input type="checkbox" name="" id="taskCheckbox1" />
                   <label htmlFor="taskCheckbox1"></label>
                   Task 1 &nbsp;

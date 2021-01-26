@@ -54,39 +54,6 @@ img {
     height: 100vh;
 }
 
-.mainMenu {
-    width: 11rem;
-    background: $color-primary;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    justify-items: center;
-    padding: 1.2rem 1rem;
-
-    a {
-        color: #fff;
-        font-weight: 700;
-    }
-
-    &-nav {
-        align-self: center;
-        &Item {
-            padding: .5rem .75rem;
-            border-radius: 20px;
-            margin-bottom: 5rem;
-        }
-        &Item-active {
-            background-color: darken($color-primary, 5%);
-        }
-    }
-
-    &-settings {
-        justify-self: end;
-        align-self: end;
-        color: #fff;
-        font-size: 3rem;
-    }
-}
-
 .logo {
     font-size: 2.1rem;
     font-weight: 700;
