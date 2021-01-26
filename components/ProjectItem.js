@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import styles from '../styles/projectItem.module.scss';
+import ProjectTaskList from './ProjectTaskList';
 
 class ProjectItem extends Component {
   constructor(props) {
@@ -10,61 +11,30 @@ class ProjectItem extends Component {
   }
 
   toggleExpand() {
-    this.setState(state => ({ isExpanded: !state.isExpanded }));
+    this.setState((state) => ({ isExpanded: !state.isExpanded }));
   }
 
   addTask() {
     //TODO: add task
   }
 
-
   render() {
-    const { name, dueDate, timeSpent } = this.props.project;
+    const { name, dueDate, timeSpent, description, taskList } = this.props.project;
     return (
-      <li
-        className={`${styles.item} ${styles.item2} ${
-          this.state.isExpanded ? styles.itemExpanded : ''
-        }`}
-        onClick={this.toggleExpand}
-      >
+      <li className={`${styles.item} ${styles.item2} ${this.state.isExpanded ? styles.itemExpanded : ''}`} onClick={this.toggleExpand}>
         <span>{name}</span>
         <span>{dueDate}</span>
         <span>{timeSpent}</span>
         <i className="fas fa-plus" onClick={this.addTask}></i>
-        {this.state.isExpanded &&
-            <div className={styles.itemExpandedSection}>
-          
+        {this.state.isExpanded && (
+          <div className={styles.itemExpandedSection}>
             <div className={styles.itemDescription}>
               <h4>Description</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima
-                quis nisi vero velit cumque eligendi aperiam magnam sunt,
-                corporis, quibusdam laudantium ducimus ipsum sint reiciendis sequi
-                autem est harum rerum!
-              </p>
+              <p>{description}</p>
             </div>
-            <ul className={styles.itemTaskList}>
-              <li className={styles.itemTaskListHeader}>
-                <span className="filter">
-                  Tasks &nbsp;<i className="filter-icon fas fa-chevron-down"></i>
-                </span>
-                <span className="filter">
-                  Time &nbsp;<i className="filter-icon fas fa-chevron-down"></i>
-                </span>
-              </li>
-              <li className="projectList-itemTask">
-                <span className={styles.itemTaskName}>
-                  <input type="checkbox" name="" id="taskCheckbox1" />
-                  <label htmlFor="taskCheckbox1"></label>
-                  Task 1 &nbsp;
-                  <i className="fas fa-chevron-up"></i>
-                </span>
-                <span className="projectList-itemTaskTime">1:00</span>
-              </li>
-            </ul>
+            <ProjectTaskList taskList={taskList}/>
           </div>
-          }
-        
+        )}
       </li>
     );
   }
