@@ -6,7 +6,7 @@ class ProjectTaskList extends Component {
     super(props);
     this.state = {
         isCompleted : props.completed
-    }
+    };
   }
 
   render() {
@@ -14,7 +14,7 @@ class ProjectTaskList extends Component {
     return (
         <li className="projectList-itemTask">
           <span className={styles.itemTaskName}>
-            <input type="checkbox" name="" id="taskCheckbox1" />
+            <input type="checkbox" name="" id="taskCheckbox1" defaultChecked={this.state.isCompleted}/>
             <label htmlFor="taskCheckbox1"></label>
             {name} &nbsp;
             <i className="fas fa-chevron-up"></i>

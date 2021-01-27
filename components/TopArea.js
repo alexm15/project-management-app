@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const TopArea = () => (
+export const TopArea = () => (
     <div className="topArea">
         <span className="clock">12:37</span>
         <div className="login">
@@ -10,5 +10,3 @@ const TopArea = () => (
         </div>
     </div>
 );
-  
-export default TopArea;

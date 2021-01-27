@@ -1,10 +1,10 @@
 import styles from '../styles/projectList.module.scss';
-import ProjectItem from './ProjectItem';
+import { ProjectItem } from './ProjectItem';
 
 
 
 
-const ProjectList = ({ projectItems }) => (
+export const ProjectList = ({ projectItems }) => (
   <ul className={styles.projectList}>
     <li className={styles.header}>
       <span className="filter">
@@ -23,4 +23,3 @@ const ProjectList = ({ projectItems }) => (
   </ul>
 );
 
-export default ProjectList;

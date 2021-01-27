@@ -1,43 +1,36 @@
-import { Component } from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/projectItem.module.scss';
-import ProjectTaskList from './ProjectTaskList';
+import { ProjectTaskList } from './ProjectTaskList';
 
-class ProjectItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isExpanded: false };
-    this.toggleExpand = this.toggleExpand.bind(this);
-    this.addTask = this.addTask.bind(this);
-  }
+export const ProjectItem = ({ project }) => {
+  const [expanded, setExpand] = useState(false);
+  const { name, dueDate, timeSpent, description, taskList } = project;
+  
+  
 
-  toggleExpand() {
-    this.setState((state) => ({ isExpanded: !state.isExpanded }));
-  }
-
-  addTask() {
+  const addTask = () => {
     //TODO: add task
-  }
+  };
 
-  render() {
-    const { name, dueDate, timeSpent, description, taskList } = this.props.project;
-    return (
-      <li className={`${styles.item} ${styles.item2} ${this.state.isExpanded ? styles.itemExpanded : ''}`} onClick={this.toggleExpand}>
-        <span>{name}</span>
-        <span>{dueDate}</span>
-        <span>{timeSpent}</span>
-        <i className="fas fa-plus" onClick={this.addTask}></i>
-        {this.state.isExpanded && (
-          <div className={styles.itemExpandedSection}>
-            <div className={styles.itemDescription}>
-              <h4>Description</h4>
-              <p>{description}</p>
-            </div>
-            <ProjectTaskList taskList={taskList}/>
+  const itemStyle = `${styles.item} ${styles.item2} ${
+    expanded ? styles.itemExpanded : ''
+  }`;
+
+  return (
+    <li className={itemStyle} onClick={() => setExpand(!expanded)}>
+      <span>{name}</span>
+      <span>{dueDate}</span>
+      <span>{timeSpent}</span>
+      <i className="fas fa-plus" onClick={addTask}></i>
+      {expanded && (
+        <div className={styles.itemExpandedSection}>
+          <div className={styles.itemDescription}>
+            <h4>Description</h4>
+            <p>{description}</p>
           </div>
-        )}
-      </li>
-    );
-  }
-}
-
-export default ProjectItem;
+          <ProjectTaskList taskList={taskList} />
+        </div>
+      )}
+    </li>
+  );
+};

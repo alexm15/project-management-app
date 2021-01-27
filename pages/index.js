@@ -1,5 +1,5 @@
-import Layout from '../components/Layout';
-import ProjectList from '../components/ProjectList';
+import { Layout } from '../components/Layout';
+import { ProjectList } from '../components/ProjectList';
 
 function fetchProjectItems() {
   return [
@@ -21,7 +21,7 @@ function fetchProjectItems() {
               quibusdam laudantium ducimus ipsum sint reiciendis sequi autem est
               harum rerum!`,
       taskList: [
-        { id: 1, name: 'Task 1', timeSpent: '1:00', completed: false },
+        { id: 1, name: 'Task 1', timeSpent: '1:00', completed: true },
       ],
     },
   ];

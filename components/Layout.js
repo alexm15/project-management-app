@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import MainMenu from './MainMenu';
-import TopArea from './TopArea';
+import {MainMenu} from './MainMenu';
+import {TopArea} from './TopArea';
 
-const Layout = ({children}) => (
+export const Layout = ({children}) => (
   <div>
     <Head>
       <title>Project Management App</title>
@@ -26,5 +26,3 @@ const Layout = ({children}) => (
     </main>
   </div>
 );
-
-export default Layout;

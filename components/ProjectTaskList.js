@@ -1,14 +1,9 @@
-import { Component } from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/projectItem.module.scss';
 import ProjectTaskItem from './ProjectTaskItem';
 
-class ProjectTaskList extends Component {
-  constructor(props) {
-    super(props);
-  }
+export const ProjectTaskList = ({taskList}) => {
 
-  render() {
-    const taskList = this.props.taskList;
     return (
       <ul className={styles.itemTaskList}>
         <li className={styles.itemTaskListHeader}>
@@ -25,7 +20,5 @@ class ProjectTaskList extends Component {
         ))}
       </ul>
     );
-  }
-}
+};
 
-export default ProjectTaskList;

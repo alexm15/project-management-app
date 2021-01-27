@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from '../styles/mainMenu.module.scss';
 
-const MainMenu = () => (
+export const MainMenu = () => (
   <aside className={styles.menu}>
     <h1 className="logo">
       <Link href="/">
@@ -38,4 +38,3 @@ const MainMenu = () => (
   </aside>
 );
 
-export default MainMenu;
