@@ -1,6 +1,8 @@
 # Project Management App
 This is the front-end repo for the Project Management App created with NextJS ([backend API can be found here](https://github.com/alexm15/project-management-api))
 
+## Sneak peek of app
+![Sneak peek of app](https://github.com/alexm15/project-management-app/blob/main/projectScreenshot.png)
 
 ##
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
