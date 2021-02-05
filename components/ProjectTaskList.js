@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/projectItem.module.scss';
-import ProjectTaskItem from './ProjectTaskItem';
+import { ProjectTaskItem } from './ProjectTaskItem';
 
 export const ProjectTaskList = ({taskList}) => {
 

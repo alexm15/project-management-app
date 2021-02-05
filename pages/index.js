@@ -1,3 +1,4 @@
+import React from 'react';
 import { Layout } from '../components/Layout';
 import { ProjectList } from '../components/ProjectList';
 
@@ -20,9 +21,7 @@ function fetchProjectItems() {
               quis nisi vero velit cumque eligendi aperiam magnam sunt, corporis,
               quibusdam laudantium ducimus ipsum sint reiciendis sequi autem est
               harum rerum!`,
-      taskList: [
-        { id: 1, name: 'Task 1', timeSpent: '1:00', completed: true },
-      ],
+      taskList: [{ id: 1, name: 'Task 1', timeSpent: '1:00', completed: true }],
     },
   ];
 }
