@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
 import styles from '../styles/projectItem.module.scss';
 import { ProjectTaskList } from './ProjectTaskList';
+import { Editable } from './Editable';
 
 export const ProjectItem = ({ project }) => {
   const [expanded, setExpand] = useState(false);
   const { name, dueDate, timeSpent, description, taskList } = project;
+  const [editMode, setEditMode] = useState(false);
+  const [showEditMode, setShowEditMode] = useState(false);
 
   // const [tasks, setTasks] = useContext(ProjectContext)
   
@@ -21,8 +24,8 @@ export const ProjectItem = ({ project }) => {
 
   return (
     <li className={itemStyle} onClick={() => setExpand(!expanded)}>
-      <span>{name}</span>
-      <span>{dueDate}</span>
+      <Editable inline={true}>{name}</Editable>
+      <Editable inline={true}>{dueDate}</Editable>
       <span>{timeSpent}</span>
       <i className="fas fa-plus" onClick={addTask} />
       {expanded && (
@@ -31,7 +34,7 @@ export const ProjectItem = ({ project }) => {
             <h4>Description</h4>
             <p>{description}</p>
           </div>
-          <ProjectTaskList taskList={taskList} onTaskAdded />
+          <ProjectTaskList taskList={taskList} />
         </div>
       )}
     </li>
