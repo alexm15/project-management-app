@@ -24,16 +24,19 @@ export const ProjectItem = ({ project }) => {
 
   return (
     <li className={itemStyle} onClick={() => setExpand(!expanded)}>
-      <Editable inline={true}>{name}</Editable>
-      <Editable inline={true}>{dueDate}</Editable>
+      <Editable inline={true} header={name} />
+      <Editable inline={true} header={dueDate} />
       <span>{timeSpent}</span>
       <i className="fas fa-plus" onClick={addTask} />
       {expanded && (
         <div className={styles.itemExpandedSection}>
-          <div className={styles.itemDescription}>
+          <Editable style={styles.itemDescription} header={<h4 style={{display: 'inline-block'}}>Description</h4>}>
+            <p>{description}</p>
+          </Editable>
+          {/* <div className={styles.itemDescription}>
             <h4>Description</h4>
             <p>{description}</p>
-          </div>
+          </div> */}
           <ProjectTaskList taskList={taskList} />
         </div>
       )}

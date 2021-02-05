@@ -8,22 +8,24 @@ export const Editable = (props) => {
     const [editMode, setEditMode] = useState(false);
     const [showEditMode, setShowEditMode] = useState(false);
 
-    const defaultEditTrigger = <span>&nbsp;&nbsp;<i class="fas fa-pencil-alt" onClick={() => setEditMode(!editMode)}></i></span>;
+    const defaultEditTrigger = <span style={{display: 'inline'}}>&nbsp;&nbsp;<i class="fas fa-pencil-alt" onClick={() => setEditMode(!editMode)}></i></span>;
 
     let display;
     if (!editMode) {
         display = (
             <>
-                {props.children }
-                {showEditMode && (props.editTrigger || defaultEditTrigger)}
+                { props.header }
+                { showEditMode && (props.editTrigger || defaultEditTrigger) }
+                { props.children }
             </>
             
         );
     } else {
         display = (
             <>
-                {props.children }
-                {showEditMode && props.saveChanges}
+                { props.editableHeader || props.header }
+                { showEditMode && props.saveChanges }
+                { props.children }
             </>
         );
     }
@@ -31,13 +33,13 @@ export const Editable = (props) => {
 
     if (props.inline) {
         return (
-            <span onMouseEnter={() => setShowEditMode(true)} onMouseLeave={() => setShowEditMode(false)}>
+            <span onMouseEnter={() => setShowEditMode(true)} onMouseLeave={() => setShowEditMode(false)} className={props.style}>
                 {display}
             </span>
         );
     } else {
         return (
-            <div onMouseEnter={() => setShowEditMode(true)} onMouseLeave={() => setShowEditMode(false)}>
+            <div onMouseEnter={() => setShowEditMode(true)} onMouseLeave={() => setShowEditMode(false)} className={props.style}>
                 {display}
             </div>
         )

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/projectItem.module.scss';
 import taskStyle from '../styles/projectTaskItem.module.scss'
+import { Editable } from './Editable'
 
 export const ProjectTaskItem = ({task}) => {
     const [completed, setCompleted] = useState(task.completed);
@@ -15,31 +16,22 @@ export const ProjectTaskItem = ({task}) => {
       setCompleted(e.target.checked);
     }
 
-    let taskDetails;
-    if (editMode) {
-      taskDetails = (
-      <span className={styles.itemTaskName}>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className={taskStyle.input}/>
-      </span>
-      );
-    } else {
-      taskDetails = (
-        <span className={styles.itemTaskName} onMouseEnter={() => setShowEditMode(true)} onMouseLeave={() => setShowEditMode(false)}>
-          <input type="checkbox" name="" id="taskCheckbox1" checked={completed} onChange={changeComplete}/>
-          <label htmlFor="taskCheckbox1"></label>
-          <span  >{name} &nbsp;</span>
-          <i className="fas fa-chevron-up"></i>
-          {showEditMode && <span>&nbsp;&nbsp;<i class="fas fa-pencil-alt" onClick={() => setEditMode(!editMode)}></i></span>}
-        </span>
-      );
-      }
+    const editField = <input type="text" value={name} onChange={(e) => setName(e.target.value)} className={taskStyle.input}/>;
+    const taskLine = (
+      <>
+        <input type="checkbox" name="" id="taskCheckbox1" checked={completed} onChange={changeComplete}/>
+        <label htmlFor="taskCheckbox1"></label>
+        <span>{name} &nbsp;</span>
+        <i className="fas fa-chevron-up"></i>
+      </>
+    );
 
-      return (
-        <li className="projectList-itemTask">
-          {taskDetails}
-          <span className="projectList-itemTaskTime">{timeSpent}</span>
-        </li>
-      );
+    return (
+      <li className="projectList-itemTask">
+        <Editable inline={true} header={taskLine} style={styles.itemTaskName} editableHeader={editField}/>
+        <span className="projectList-itemTaskTime">{timeSpent}</span>
+      </li>
+    );
 
-    }
+}
 
