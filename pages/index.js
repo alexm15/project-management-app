@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { ProjectsContext } from "../context/ProjectContext";
 import { Layout } from "../components/Layout";
 import { ProjectList } from "../components/ProjectList";
+import {AddProject} from '../components/AddProject'
 
 function fetchProjectItems() {
   return [
@@ -49,7 +50,8 @@ const ProjectsPage = ({ projectItems }) => {
         <div className="mainArea-item">
           <div className="mainArea-itemHeader">
             <h3>Projects:</h3>
-            <button className="button button--primary">New Project</button>
+            <AddProject />
+            
           </div>
           <div className="mainArea-itemBody">
             <ProjectList />
